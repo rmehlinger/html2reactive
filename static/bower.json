@@ -1,0 +1,19 @@
+{
+  "name": "html2reactive",
+  "authors": [
+    "Richard Mehlinger <rmehlinger@infer.com>"
+  ],
+  "description": "simple web application for converting html to reactive-coffee",
+  "main": "main.coffee",
+  "moduleType": [],
+  "keywords": [
+    "reactive-coffee"
+  ],
+  "license": "MIT",
+  "homepage": "rmehlinger.com",
+  "private": true,
+  "dependencies": {
+    "reactive-coffee": "~1.2.4",
+    "reactive-storage": "~0.1.8-alpha"
+  }
+}
