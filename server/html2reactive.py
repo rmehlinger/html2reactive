@@ -17,6 +17,10 @@ def translate_text(html, namespace, spaces):
     namespace += '.'
 
   for action, elem in context:
+    if elem.tag == 'body':
+      break  # don't include stuff outside of the body
+
+  for action, elem in context:
     if action == 'start':
       lines += indent('%s%s %s, [\n' % (namespace, elem.tag, elem.attrib), indents)
       indents += spaces
@@ -28,7 +32,7 @@ def translate_text(html, namespace, spaces):
       lines += indent(']\n', indents)
       lines += put_text(elem.tail, indents)
 
-  return empty.sub('', lines)
+  return empty.sub('', lines[:-4])  # don't include closing brackets for stuff outside of the body
 
 
 def indent(text, count):
