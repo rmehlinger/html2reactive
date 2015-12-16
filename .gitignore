@@ -1,6 +1,9 @@
 .idea/
 __pycache__/
 bower_components/
+node_modules/
+venv/
+*.pyc
 
 # Windows image file caches
 Thumbs.db

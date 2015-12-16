@@ -14,6 +14,7 @@
   "private": true,
   "dependencies": {
     "reactive-coffee": "~1.2.4",
-    "reactive-storage": "~0.1.8-alpha"
+    "reactive-storage": "~0.1.8-alpha",
+    "bootstrap": "~3.3.6"
   }
 }

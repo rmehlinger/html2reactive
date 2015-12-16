@@ -1,0 +1,29 @@
+{
+  "name": "html2reactive",
+  "version": "1.0.0",
+  "description": "A simple web app for converting html to reactive-coffee templating DSL",
+  "main": "main.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmehlinger/html2reactive.git"
+  },
+  "keywords": [
+    "reactive-coffee"
+  ],
+  "author": "Richard Mehlinger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmehlinger/html2reactive/issues"
+  },
+  "homepage": "https://github.com/rmehlinger/html2reactive",
+  "dependencies": {
+    "bower": "^1.7.1"
+  },
+  "engines": {
+    "node": "4.2.3"
+  }
+}

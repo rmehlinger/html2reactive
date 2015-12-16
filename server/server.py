@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from html2reactive import translate_text
 
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__, static_folder="../static")
 app.config.from_pyfile('config.py')
 
 
@@ -17,5 +17,3 @@ def _translate():
   spaces = request.get_json().get("spaces", 2)
 
   return jsonify(rc=translate_text(html, namespace, spaces))
-
-app.run()
