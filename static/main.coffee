@@ -15,6 +15,7 @@ init = ->
   }
 
   results = rx.cell("")
+  $coffeeOut = tags.pre bind -> results.get() ? ""
   hasError = rx.cell false
 
   $('body').append tags.div {class: 'container'}, [
@@ -67,10 +68,28 @@ init = ->
         ]
       ]
     ]
-    tags.div {class: 'row'}, tags.div {class: 'col-sm-12', style: marginBottom: 30}, rx.flatten [
-      tags.h2 "Reactive template"
-      bind -> if not hasError.get() then tags.pre bind -> results.get() ? ""
+    tags.div {class: 'row'}, [
+      tags.h2 {class: 'col-md-12'}, [
+        "Reactive Template Code "
+        tags.button {
+          type: 'button'
+          class: 'btn btn-default'
+          click: ->
+            if document.body.createTextRange
+              range = document.body.createTextRange()
+              range.moveToElementText($coffeeOut[0])
+              range.select()
+            else if window.getSelection
+              selection = window.getSelection()
+              range = document.createRange()
+              range.selectNodeContents($coffeeOut[0])
+              selection.removeAllRanges()
+              selection.addRange(range)
+        }, "Select All"
+      ]
     ]
+    tags.div {class: 'row'}, tags.div {class: 'col-sm-12', style: marginBottom: 30},
+      bind -> if not hasError.get() then $coffeeOut
     tags.div {class: 'row'}, tags.footer {class: 'col-sm-12'}, [
       tags.p [
         "This application written by "
